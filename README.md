@@ -12,7 +12,11 @@
 
 ### In-progress Tasks
 
+- [ ] Finishing Pruning the word list
+- [ ] Remove Duplicates from the prune list
 - [ ] Handle Cors whitelisting/blacklisting from FE to BE
+- [ ] Scrap Definitions
+- [ ] FE Design
 
 ## Getting Started
 
@@ -20,7 +24,7 @@
 
 ```
 pip install Django
-pip install pipenv (used in backend folder for virtual env)
+pip install pipenv (used in backend folder for virtual env) (> pipenv shell)
 ```
 
 ### Installation
@@ -54,3 +58,37 @@ pip install pipenv (used in backend folder for virtual env)
 [![](https://img.shields.io/badge/Framer-000000?style=for-the-badge&logo=framer&logoColor=white)]()
 [![](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=Axios&logoColor=white)]()
 [![](https://img.shields.io/badge/Beautiful_Soup-000000?style=for-the-badge&logo=Python&logoColor=white)]()
+[![](https://img.shields.io/badge/Netlify-000000?style=for-the-badge&logo=Netlify&logoColor=white)]()
+
+### Other Notes
+
+Pruning the First Word List
+
+```
+wordlistPrune = open("wordlistPruneV2.txt", "r+")
+with open("wordlistPrunedV1.txt") as file:
+    for line in file:
+        if (containsAlpha(line.rstrip()) and len(line.rstrip()) > 3):
+            word = getWord(line.rstrip())
+            if (len(word['name']) > 0 and len(word['pronunciation']) > 0 and len(word['partOfSpeech']) > 0):
+                if (not word['name'][0] in wordlistPrune.read()):
+                    wordlistPrune.write(word['name'][0] + "\n")
+wordlistPrune.close()
+file.close()
+```
+
+Pruning the Second Word List
+
+```
+wordlistPrune = open("wordlistPrunedV3.txt", "w")
+buf = []
+with open("wordlistPrunedV2.txt", "r") as file:
+    for line in file:
+        if (len(line) > 0):
+            buf.append(line)
+    buf = list(dict.fromkeys(buf))
+    for l in buf:
+        wordlistPrune.write(l)
+wordlistPrune.close()
+file.close()
+```
