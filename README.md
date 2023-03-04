@@ -12,10 +12,12 @@
 
 ### In-progress Tasks
 
-- [ ] Finishing Pruning the word list
-- [ ] Remove Duplicates from the prune list
+- [x] Finishing Pruning the word list
+- [x] Remove Duplicates from the prune list
 - [ ] Handle Cors whitelisting/blacklisting from FE to BE
-- [ ] Scrap Definitions
+- [x] Scrap Definitions
+- [ ] Apikey / Authorization
+- [ ] Deleting Generated Word Lists
 - [ ] FE Design
 
 ## Getting Started

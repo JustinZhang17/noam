@@ -30,7 +30,7 @@ def posStr(arr=[]):
     return s[:-2]
 
 
-# 6yW6IJMyJhhwBUZTbev7SHG6zJpUirgZ
+# 6yW6IJMyJhhwBUZTbev7SHG6zJpUirgZ TODO: Change this and the api hash
 @app.get("/wordlist")
 async def getWordList(apiKey: str = "", size: int = 200):
     if (size < 1 or size > 600):
