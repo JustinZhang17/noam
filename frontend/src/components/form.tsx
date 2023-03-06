@@ -13,17 +13,45 @@ import {
   FormHelperText,
   Input,
 } from "@chakra-ui/react";
+import axios from "axios";
 
 const Form = () => {
   const [wlLength, setWlLength] = React.useState("200");
   const [apiKey, setApiKey] = React.useState("");
+  const [listLoading, setListLoading] = React.useState(false);
+
+  const getWordlist = async (size: Number, apiKey: String) => {
+    try {
+      const config = {
+        headers: {
+          method: "GET",
+          responseType: "blob",
+        },
+      };
+
+      const resp = await axios.get(
+        "http://localhost:3000/wordlist?size=" + size + "&apiKey=" + apiKey,
+        config
+      );
+      setListLoading(false);
+      const url = window.URL.createObjectURL(new Blob([resp.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "file.xlsx");
+      document.body.appendChild(link);
+      link.click();
+      console.log(resp.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <Box
-      display='flex'
-      justifyContent='space-between'
-      alignItems='center'
-      flexDirection='column'
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      flexDirection="column"
       mx={{ base: 5, md: 60 }}
       my={{ base: 10 }}
     >
@@ -46,7 +74,7 @@ const Form = () => {
 
         <FormLabel mt={6}>Api Key</FormLabel>
         <Input
-          placeholder='Enter your Api Key'
+          placeholder="Enter your Api Key"
           onChange={(e: any) => setApiKey(e.target.value)}
           value={apiKey}
         />
@@ -54,8 +82,10 @@ const Form = () => {
       </FormControl>
 
       <Button
+        isLoading={listLoading}
         onClick={() => {
-          console.log("Clicked");
+          setListLoading(true);
+          getWordlist(parseInt(wlLength), apiKey);
         }}
       >
         Submit

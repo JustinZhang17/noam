@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  Link,
 } from "@chakra-ui/react";
 
 const Promo = () => {
@@ -19,7 +20,9 @@ const Promo = () => {
 
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={7}>
-            <Button>Click Here</Button>
+            <Link href='https://linktr.ee/justinjzhang' isExternal>
+              <Button>Click Here</Button>
+            </Link>
           </Stack>
         </Flex>
       </Flex>

@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Link,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, ChatIcon } from "@chakra-ui/icons";
 import { FaCode } from "react-icons/fa";
@@ -31,8 +32,12 @@ const Navbar = () => {
 
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={7}>
-            <Button leftIcon={<ChatIcon />}>What is this?</Button>
-            <Button leftIcon={<FaCode />}>Source Code</Button>
+            <Link href='https://blog.justinjzhang.com/' isExternal>
+              <Button leftIcon={<ChatIcon />}>What is this?</Button>
+            </Link>
+            <Link href='https://github.com/JustinZhang17' isExternal>
+              <Button leftIcon={<FaCode />}>Source Code</Button>
+            </Link>
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>

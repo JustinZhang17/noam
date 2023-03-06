@@ -19,6 +19,8 @@
 - [ ] Apikey / Authorization
 - [ ] Deleting Generated Word Lists
 - [ ] FE Design
+- [ ] RTL Testing
+- [ ] CI/CD
 
 ## Getting Started
 
