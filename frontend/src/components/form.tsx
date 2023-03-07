@@ -25,7 +25,6 @@ const Form = () => {
       const config = {
         headers: {
           method: "GET",
-          responseType: "blob",
         },
       };
 
@@ -34,12 +33,6 @@ const Form = () => {
         config
       );
       setListLoading(false);
-      const url = window.URL.createObjectURL(new Blob([resp.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", "file.xlsx");
-      document.body.appendChild(link);
-      link.click();
       console.log(resp.data);
     } catch (err) {
       console.error(err);
