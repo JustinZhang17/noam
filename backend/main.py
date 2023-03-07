@@ -7,6 +7,10 @@ import ast
 import random
 import hashlib
 
+import os.path
+from dotenv import dotenv_values
+import boto3
+
 wb = Workbook()
 ws = wb.active
 
@@ -79,4 +83,40 @@ async def getWordList(apiKey: str = "", size: int = 200):
     return FileResponse(path=(str(listName) + ".xlsx"), filename="Noam-Wordlist-" + str(size) + ".xlsx")
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", reload=True)
+    # Environment Check
+    environ = ".env"
+    if (os.path.isfile(".env.local")):
+        environ = ".env.local"
+
+    cred = dotenv_values(environ)
+
+    session = boto3.Session(
+        aws_access_key_id=cred.get("AWS_ACCESS_KEY_ID"),
+        aws_secret_access_key=cred.get("AWS_SECRET_ACCESS_KEY"),
+        region_name=cred.get("AWS_DEFAULT_REGION"),
+    )
+
+    dynaDB = session.resource('dynamodb')
+    table = dynaDB.Table('noam-wordlist')
+
+    lines = open("../assets/word_bank.txt", "r",
+                 encoding='UTF8').read().splitlines()
+
+# TODO: Remove DynamoDB table from AWS & Codebase
+# TODO: Remove .env files
+# TODO: Remove DynamoDB Access from account (Access Policies)
+
+    # with table.batch_writer() as batch:
+    #     for i in range(0, 16750, 25):
+    #         for j in range(0, 25):
+    #             print(i+j)
+    #             batch.put_item(
+    #                 Item=ast.literal_eval(lines[i + j])
+    #             )
+    # for i in range(16750, 16773):
+    #     print(i)
+    #     table.put_item(
+    #         Item=ast.literal_eval(lines[i])
+    #     )
+
+    # uvicorn.run("main:app", reload=True)

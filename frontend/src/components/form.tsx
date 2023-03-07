@@ -75,7 +75,9 @@ const Form = () => {
         <FormLabel mt={6}>Api Key</FormLabel>
         <Input
           placeholder="Enter your Api Key"
-          onChange={(e: any) => setApiKey(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setApiKey(e.target.value);
+          }}
           value={apiKey}
         />
         <FormHelperText>Don't share this with anyone.</FormHelperText>
@@ -93,7 +95,5 @@ const Form = () => {
     </Box>
   );
 };
-
-// Input onChange event parameters need to be changed to be strongly typed
 
 export default Form;
