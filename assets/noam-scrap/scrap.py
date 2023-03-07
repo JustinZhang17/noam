@@ -190,7 +190,7 @@ for i in range(37):
         if (word is not None and word.isalpha()):
             print(word.lower())
             output["name"] = word.lower()
-            output["pronounciation"] = getPronunciation(word.lower())
+            output["pronunciation"] = getPronunciation(word.lower())
             output["partOfSpeech"] = getPartOfSpeech(word.lower())
             output["definition"] = getDefinition(word.lower())
             output["sentences"] = getSentences(word.lower())

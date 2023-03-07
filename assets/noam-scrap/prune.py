@@ -9,7 +9,7 @@ with open("words_prune.txt", "r", encoding='UTF8') as wordlist:
     for line in wordlist:
         term = ast.literal_eval(line)
 
-        if (term['pronounciation'] == [] or term['partOfSpeech'] == [] or term['sentences'] == []):
+        if (term['pronunciation'] == [] or term['partOfSpeech'] == [] or term['sentences'] == []):
             continue
 
         if (term['name'] in list):

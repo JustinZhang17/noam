@@ -29,11 +29,12 @@ const Form = () => {
       };
 
       const resp = await axios.get(
-        "http://localhost:3000/wordlist?size=" + size + "&apiKey=" + apiKey,
+        "/wordlist?size=" + size + "&apiKey=" + apiKey,
         config
       );
+
       setListLoading(false);
-      console.log(resp.data);
+      console.log(resp);
     } catch (err) {
       console.error(err);
     }
