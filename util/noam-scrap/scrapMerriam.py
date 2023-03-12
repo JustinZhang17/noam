@@ -177,3 +177,34 @@ with open("../../../assets/wordlistIterations/wordlistPrunedV4.txt", "r") as fil
 
 wordlistCreate.close()
 file.close()
+
+# Pruning the First Word List
+
+# ```
+# wordlistPrune = open("wordlistPruneV2.txt", "r+")
+# with open("wordlistPrunedV1.txt") as file:
+#     for line in file:
+#         if (containsAlpha(line.rstrip()) and len(line.rstrip()) > 3):
+#             word = getWord(line.rstrip())
+#             if (len(word['name']) > 0 and len(word['pronunciation']) > 0 and len(word['partOfSpeech']) > 0):
+#                 if (not word['name'][0] in wordlistPrune.read()):
+#                     wordlistPrune.write(word['name'][0] + "\n")
+# wordlistPrune.close()
+# file.close()
+# ```
+
+# Pruning the Second Word List
+
+# ```
+# wordlistPrune = open("wordlistPrunedV3.txt", "w")
+# buf = []
+# with open("wordlistPrunedV2.txt", "r") as file:
+#     for line in file:
+#         if (len(line) > 0):
+#             buf.append(line)
+#     buf = list(dict.fromkeys(buf))
+#     for l in buf:
+#         wordlistPrune.write(l)
+# wordlistPrune.close()
+# file.close()
+# ```
