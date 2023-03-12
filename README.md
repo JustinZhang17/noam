@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="assets/logo-color.png" alt="Logo" width="100" height="100" style="margin-bottom: -2rem;">
+    <img src="public/logo-color.png" alt="Logo" width="100" height="100" style="margin-bottom: -2rem;">
 
   <h2 align="center">Project Noam</h2>
 
@@ -14,13 +14,14 @@
 
 - [x] Finishing Pruning the word list
 - [x] Remove Duplicates from the prune list
-- [ ] Handle Cors whitelisting/blacklisting from FE to BE
+- [x] Handle Cors whitelisting/blacklisting from FE to BE
 - [x] Scrap Definitions
-- [ ] Apikey / Authorization
-- [ ] Deleting Generated Word Lists
-- [ ] FE Design
-- [ ] RTL Testing
-- [ ] CI/CD
+- [x] Apikey / Authorization
+- [x] Deleting Generated Word Lists
+- [x] FE Design
+- [ ] RTL/Jest Testing
+- [x] CI/CD
+- [ ] Blog Article
 
 ## Getting Started
 
@@ -62,7 +63,7 @@ pip install pipenv (used in backend folder for virtual env) (> pipenv shell)
 [![](https://img.shields.io/badge/Framer-000000?style=for-the-badge&logo=framer&logoColor=white)]()
 [![](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=Axios&logoColor=white)]()
 [![](https://img.shields.io/badge/Beautiful_Soup-000000?style=for-the-badge&logo=Python&logoColor=white)]()
-[![](https://img.shields.io/badge/Netlify-000000?style=for-the-badge&logo=Netlify&logoColor=white)]()
+[![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white)]()
 
 ### Other Notes
 
