@@ -103,3 +103,11 @@ If you see an issue or would like to contribute, please do & open a pull request
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Miscellaneous
+
+### [What's the meaning behind the name](https://blog.justinjzhang.com/behind-the-names/)
+
+### [Who is Noam Chomsky?](https://www.britannica.com/biography/Noam-Chomsky)
+
+Being deployed on Vercel, the application uses Serverless functions, so it might take a while to load/spin-up initially
