@@ -24,14 +24,18 @@ const Form = () => {
   const Toast = useToast();
 
   const formError = (): void => {
+    // Toast Error Message is Wordlist Length or ApiKey is invalid
     Toast({
       title: "Error: Wordlist Request Failed.",
-      description: "Please check your Api Key and Wordlist Length are valid.",
+      description:
+        "Please check if your Api Key and Wordlist Length are valid.",
       status: "error",
       variant: "solid",
       duration: 4000,
       isClosable: true,
     });
+
+    // Reset Loading State
     setListLoading(false);
   };
 
@@ -39,6 +43,7 @@ const Form = () => {
     if (apiKey === "" || size > 600) return formError();
 
     try {
+      // Get Wordlist via API
       const resp = await axios.get(
         "/wordlist?size=" + size + "&apiKey=" + apiKey,
         {
@@ -58,11 +63,15 @@ const Form = () => {
       });
 
       setListLoading(false);
+
+      // Create Binary large object from api response
       const blob = new Blob([resp.data], {
         type:
           resp.data?.type ??
           "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
       });
+
+      // Save File
       saveAs(blob, "Noam-Wordlist-" + size + ".xlsx");
     } catch (err: any) {
       console.error(err);

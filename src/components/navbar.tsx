@@ -36,7 +36,7 @@ const Navbar = () => {
           <Stack direction={"row"} spacing={{ base: 3, md: 7 }}>
             <Link href="https://blog.justinjzhang.com/noam" isExternal>
               <Button
-                leftIcon={<ChatIcon />}
+                leftIcon={<ChatIcon data-testid="chat-icon" />}
                 display={{ base: "none", md: "block" }}
                 bgColor={ButtonColor}
               >
@@ -51,7 +51,7 @@ const Navbar = () => {
             </Link>
             <Link href="https://github.com/JustinZhang17/noam" isExternal>
               <Button
-                leftIcon={<FaCode />}
+                leftIcon={<FaCode data-testid="code-icon" />}
                 display={{ base: "none", md: "block" }}
                 bgColor={ButtonColor}
               >
@@ -64,8 +64,16 @@ const Navbar = () => {
                 <FaCode />
               </Button>
             </Link>
-            <Button onClick={toggleColorMode} bgColor={ButtonColor}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            <Button
+              onClick={toggleColorMode}
+              bgColor={ButtonColor}
+              data-testid="theme-button"
+            >
+              {colorMode === "light" ? (
+                <MoonIcon data-testid="light-button" />
+              ) : (
+                <SunIcon data-testid="dark-button" />
+              )}
             </Button>
           </Stack>
         </Flex>

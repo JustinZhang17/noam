@@ -15,6 +15,14 @@ apiKeys = ["94dbb126ff4e9700d201333b897b027505dfd2874f873b947f7e374592e3d96ddb36
 
 
 def pro_str(arr=[]):
+    """formats pronunciation array into a string
+
+    Args:
+        arr (list, optional): contains a list of ways the word can be pronounced. Defaults to [].
+
+    Returns:
+        String: formatted pronunciation string
+    """
     s = ""
     for pro in arr:
         s += "\\ " + pro + " \\" + " or "
@@ -22,6 +30,11 @@ def pro_str(arr=[]):
 
 
 def pos_str(arr=[]):
+    """formats part of speech array into a string
+
+    Returns:
+        String: formatted part of speech string
+    """
     s = ""
     for pos in arr:
         s += pos + ", "
@@ -29,7 +42,7 @@ def pos_str(arr=[]):
 
 
 @app.get("/wordlist")
-async def get_wordlist(apiKey: str = "", size: int = 200, background_tasks: BackgroundTasks = BackgroundTasks, response: Response = Response):
+async def get_wordlist(apiKey: str = "", size: int = 200, background_tasks: BackgroundTasks = BackgroundTasks, response: Response = None):
 
     hashed: str = hashlib.sha512(apiKey.encode()).hexdigest()
 
@@ -80,6 +93,12 @@ async def get_wordlist(apiKey: str = "", size: int = 200, background_tasks: Back
 
 
 def set_sheet_style(ws, font_family: str):
+    """Sets default style for the spreadsheet
+
+    Args:
+        ws (worksheet): worksheet to set the style for
+        font_family (str): font family to use
+    """
     ws["A1"] = 'Word'
     ws["B1"] = 'Pronunciation'
     ws["C1"] = 'Part Of Speech'
@@ -96,4 +115,9 @@ def set_sheet_style(ws, font_family: str):
 
 
 def delete_file(list_name: int):
+    """Deletes the file after it has been sent
+
+    Args:
+        list_name (int): name of the file to delete
+    """
     os.remove('/tmp/' + str(list_name) + file_type)
