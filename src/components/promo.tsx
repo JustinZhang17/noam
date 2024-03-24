@@ -24,7 +24,7 @@ const Promo = () => {
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={7}>
             <Link
-              href="https://linktr.ee/justinjzhang"
+              href="https://www.justinjzhang.com/"
               style={{ textDecoration: "none" }}
               isExternal
             >

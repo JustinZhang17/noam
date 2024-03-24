@@ -34,7 +34,7 @@ const Navbar = () => {
 
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={{ base: 3, md: 7 }}>
-            <Link href="https://blog.justinjzhang.com/noam" isExternal>
+            <Link href="https://www.justinjzhang.com/projects/noam" isExternal>
               <Button
                 leftIcon={<ChatIcon data-testid="chat-icon" />}
                 display={{ base: "none", md: "block" }}
