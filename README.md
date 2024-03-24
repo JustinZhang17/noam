@@ -8,47 +8,72 @@
   </p>
 </div>
 
-## About The Project
+Noam generate wordlists used for spelling bee purposes. It provides a way for spellers to test their spelling skills and improve their vocabulary. It also provides a way for teachers to create wordlists for their students to practice.
 
-### In-progress Tasks
+Wordlists contain the following categories:
 
-- [x] Finishing Pruning the word list
-- [x] Remove Duplicates from the prune list
-- [x] Handle Cors whitelisting/blacklisting from FE to BE
-- [x] Scrap Definitions
-- [x] Apikey / Authorization
-- [x] Deleting Generated Word Lists
-- [x] FE Design
-- [ ] RTL/Jest Testing
-- [x] CI/CD
-- [ ] Blog Article
+- Words
+- Definitions
+- Pronunciations
+- Parts of Speech
+- Sentences
+- Etymology
 
 ## Getting Started
 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
 ### Prerequisites
 
+Node 19.7.0
+
+Python 3.9 or higher
+
 ```
-pip install Django
-pip install pipenv (used in backend folder for virtual env) (> pipenv shell)
+apt-get update
+apt-get install python
+apt-get install nodejs
 ```
 
-### Installation
+### Installing
 
-<!-- USAGE EXAMPLES -->
+A step by step series of examples that tell you how to get a development env running
+
+either pipfile or requirements.txt can be used
+
+```
+npm install
+pip install requirements.txt
+pipenv install
+```
+
+Run the following command to start the application
+
+```
+npm run start
+```
 
 ### Usage
 
-<!-- LICENSE -->
+This filling out and submitting the form will generate a wordlist in the form of a downloadable spreadsheet.
 
-### License
+A Wordlist length must be specified between 1 to 600 words & an Api Key must be provided; Which can be [found here](https://blog.justinjzhang.com/noam).
 
-[MIT](https://choosealicense.com/licenses/mit/)
+<center><img src="public/noam-application.JPG"  width="600" alt="Noam Application" style="border-radius: 0.5rem"></center>
 
-<!-- ACKNOWLEDGMENTS -->
+## Running unit tests
 
-### Acknowledgments
+Located in tests folder at _src/test_
 
-### Environment
+- form.test.tsx
+- navbar.test.tsx
+- promo.test.tsx
+
+```
+npm run test
+```
+
+## Built With
 
 [![](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white)]()
 [![](https://img.shields.io/badge/FastApi-000000?style=for-the-badge&logo=FastApi&logoColor=white)]()
@@ -64,3 +89,25 @@ pip install pipenv (used in backend folder for virtual env) (> pipenv shell)
 [![](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=Axios&logoColor=white)]()
 [![](https://img.shields.io/badge/Beautiful_Soup-000000?style=for-the-badge&logo=Python&logoColor=white)]()
 [![](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white)]()
+[![](https://img.shields.io/badge/Jest-000000?style=for-the-badge&logo=Jest&logoColor=white)]()
+[![](https://img.shields.io/badge/React_Testing_Library-000000?style=for-the-badge&logo=TestingLibrary&logoColor=white)]()
+
+## Contributing
+
+If you see an issue or would like to contribute, please do & open a pull request or ticket for/with new features or fixes.
+
+## Authors
+
+- **Justin Zhang** - _Initial work_ - [JustinZhang17](https://github.com/JustinZhang17)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Miscellaneous
+
+### [What's the meaning behind the name](https://blog.justinjzhang.com/behind-the-names/)
+
+### [Who is Noam Chomsky?](https://www.britannica.com/biography/Noam-Chomsky)
+
+Being deployed on Vercel, the application uses Serverless functions, so it might take a while to load/spin-up initially
