@@ -94,7 +94,7 @@ npm run test
 
 ## Contributing
 
-If you see an issue or would like to contribute, please do & open a pull request or ticket for/with new features or fixes.
+If you see an issue or would like to contribute, please do & open a pull request or ticket for/with new features or fixes
 
 ## Authors
 
@@ -106,7 +106,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Miscellaneous
 
-### [What's the meaning behind the name](https://blog.justinjzhang.com/behind-the-names/)
+### [What's the meaning behind the name](https://www.justinjzhang.com/projects/behind-the-names)
 
 ### [Who is Noam Chomsky?](https://www.britannica.com/biography/Noam-Chomsky)
 
