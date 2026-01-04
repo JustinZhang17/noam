@@ -94,7 +94,7 @@ npm run test
 
 ## Contributing
 
-If you see an issue or would like to contribute, please do & open a pull request or ticket for/with new features or fixes.
+If you see an issue or would like to contribute, please do & open a pull request or ticket for/with new features or fixes
 
 ## Authors
 
