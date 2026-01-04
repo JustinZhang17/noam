@@ -106,7 +106,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Miscellaneous
 
-### [What's the meaning behind the name](https://blog.justinjzhang.com/behind-the-names/)
+### [What's the meaning behind the name](https://www.justinjzhang.com/projects/behind-the-names)
 
 ### [Who is Noam Chomsky?](https://www.britannica.com/biography/Noam-Chomsky)
 
